@@ -1,0 +1,62 @@
+# CUCM Servers
+# List multiple servers to monitor an entire cluster.
+# Each server gets a cucm_host label in Prometheus for filtering in Grafana.
+servers:
+  - name: "cucm-pub"
+    host: "192.168.1.20"
+    port: 8443
+    username: "administrator"
+    password: "password"
+    verify_ssl: false
+  # - name: "cucm-sub"
+  #   host: "192.168.1.21"
+  #   port: 8443
+  #   username: "administrator"
+  #   password: "password"
+  #   verify_ssl: false
+
+# Legacy single-server format (used if 'servers' is absent):
+# cucm:
+#   host: "192.168.1.20"
+#   port: 8443
+#   username: "administrator"
+#   password: "password"
+#   verify_ssl: false
+
+# Exporter settings
+exporter:
+  port: 9100
+  log_level: "INFO"
+  scrape_timeout: 55
+
+# PerfMon collection
+perfmon:
+  enabled: true
+  objects:
+    # Core call processing
+    - "Cisco CallManager"
+    - "Cisco CallManager System Performance"
+    # SIP
+    - "Cisco SIP Stack"
+    - "Cisco SIP Station"
+    # System resources
+    - "Memory"
+    - "Processor"
+    - "System"
+    - "Network Interface"
+    - "Partition"
+    - "TCP"
+    # Services
+    - "DB Local_DSN"
+    - "DB Change Notification Server"
+    - "Number of Replicates Created and State of Replication"
+    - "Cisco TFTP"
+    - "Cisco Tomcat JVM"
+    - "Cisco Tomcat Connector"
+    - "Cisco Media Streaming App"
+
+# RISPort collection
+risport:
+  enabled: true
+  max_devices: 2000
+  device_info_enabled: true

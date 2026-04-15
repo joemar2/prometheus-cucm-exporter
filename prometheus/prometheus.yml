@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 60s
+  evaluation_interval: 60s
+  scrape_timeout: 55s
+
+scrape_configs:
+  - job_name: "cucm"
+    static_configs:
+      - targets: ["cucm-exporter:9100"]
+    scrape_interval: 60s
+    scrape_timeout: 55s
