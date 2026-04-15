@@ -17,14 +17,14 @@ The included Grafana dashboard provides 41 panels across 10 rows covering call a
 
 ```
 ┌──────────────┐      SOAP/HTTPS       ┌───────────────┐        ┌────────────────┐
-│  Prometheus   │ ──── scrape ────────> │ CUCM Exporter │ ─────> │  CUCM Pub      │
-│  (port 9090)  │ <── /metrics ──────── │  (port 9100)  │ ─────> │  CUCM Sub 1    │
-└──────┬───────┘                        └───────────────┘ ─────> │  CUCM Sub N    │
-       │                                                         └────────────────┘
+│  Prometheus  │ ──── scrape ────────> │ CUCM Exporter │ ─────> │  CUCM Pub      │
+│  (port 9090) │ <── /metrics ──────── │  (port 9100)  │ ─────> │  CUCM Sub 1    │
+└──────┬───────┘                       └───────────────┘ ─────> │  CUCM Sub N    │
+       │                                                        └────────────────┘
        v
 ┌──────────────┐
-│   Grafana     │   (cucm_host label on every metric
-│  (port 3000)  │    for per-server filtering)
+│   Grafana    │   (cucm_host label on every metric
+│  (port 3000) │    for per-server filtering)
 └──────────────┘
 ```
 
