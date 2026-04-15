@@ -1,5 +1,7 @@
 # CUCM Prometheus Exporter
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A Prometheus exporter for Cisco Unified Communications Manager (CUCM) that collects real-time performance counters and device registration data from one or more CUCM servers, bundled with a pre-built Grafana dashboard. Supports monitoring an entire CUCM cluster from a single exporter instance.
 
 ## What It Does
